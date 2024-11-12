@@ -5,6 +5,8 @@ contract ownerFaes {
 
 address owner;
 
+uint256 public Number;
+
 constructor () {
     owner = msg.sender;
 }
@@ -12,6 +14,10 @@ constructor () {
 modifier onlyOwner (){
     require(msg.sender == owner, "not owner");
     _;
+}
+
+ function increment () public {
+    Number += 52;
 }
 
 }
