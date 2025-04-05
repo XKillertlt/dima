@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+  overflow: hidden;
+}
+
+.app {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.app:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Заголовок */
+h1 {
+  font-size: 38px;
+  font-weight: 600;
+  color: #2575fc;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для формы */
+.search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+  position: relative;
+  gap: 17px;
+}
+
+input {
+  padding: 16px;
+  width: 65%;
+  border: 2px solid #2575fc;
+  border-radius: 50px;
+  font-size: 18px;
+  color: #333;
+  background-color: #f7f7f7;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  outline: none;
+  border-color: #6a11cb;
+  background-color: #fff;
+}
+
+button {
+  padding: 15px 30px;
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #6a11cb;
+  transform: translateY(-3px);
+}
+
+button:active {
+  background-color: #5a09b3;
+  transform: translateY(2px);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Блок с данными о погоде */
+.weather-data {
+  margin-top: 40px;
+}
+
+.weather-data p {
+  font-size: 22px;
+  margin: 12px 0;
+  line-height: 1.7;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Уникальный стиль для температуры */
+.weather-data p:nth-child(1) {
+  font-size: 40px;
+  font-weight: 700;
+  color: #6a11cb;
+}
+
+/* Описание погоды */
+.weather-data p:nth-child(2) {
+  font-size: 20px;
+  color: #2575fc;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+/* Стиль для влажности и ветра */
+.weather-data p:nth-child(3),
+.weather-data p:nth-child(4) {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Сообщение об ошибке */
+.error {
+  font-size: 18px;
+  color: #ff4d4d;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.error.visible {
+  opacity: 1;
+}
+
+/* Анимация загрузки */
+.loading {
+  font-size: 20px;
+  color: #2575fc;
+  font-weight: 600;
+  margin-top: 20px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Пульсация анимации для текста "Загрузка" */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Адаптивность */
+@media (max-width: 600px) {
+  .app {
+    padding: 35px 25px;
+  }
+  input {
+    width: 55%;
+  }
+  button {
+    padding: 12px 22px;
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 400px) {
+  .app {
+    padding: 25px 20px;
+  }
+  input {
+    width: 50%;
+  }
+  button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+}/*# sourceMappingURL=style.css.map */
